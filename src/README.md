@@ -43,19 +43,19 @@ MySQL Database used for storing URL information and analytics.
 
 ### Home Page
 
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/01-home.png)
 
 ### Result Page
 
-![Result Page](screenshots/result.png)
+![Result Page](screenshots/02-result.png)
 
 ### History Page
 
-![History Page](screenshots/history.png)
+![History Page](screenshots/03-history.png)
 
 ### Statistics Page
 
-![Statistics Page](screenshots/stats.png)
+![Statistics Page](screenshots/04-stats.png)
 
 ## Author
 
