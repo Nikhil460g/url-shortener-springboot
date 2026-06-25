@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>URL Statistics</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0;
+        }
+
+        .container{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            width:600px;
+        }
+
+        h1{
+            text-align:center;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        p{
+            font-size:18px;
+            margin:15px 0;
+        }
+
+        strong{
+            color:#555;
+        }
+
+        a{
+            display:block;
+            text-align:center;
+            margin-top:30px;
+            color:#667eea;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 URL Statistics</h1>
+
+    <p>
+        <strong>Original URL:</strong>
+        <span th:text="${url.originalUrl}"></span>
+    </p>
+
+    <p>
+        <strong>Short Code:</strong>
+        <span th:text="${url.shortCode}"></span>
+    </p>
+
+    <p>
+        <strong>Total Clicks:</strong>
+        <span th:text="${url.clickCount}"></span>
+    </p>
+
+    <a href="/">
+        Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

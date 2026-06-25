@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Short URL Generated</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0;
+        }
+
+        .container{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            width:550px;
+            text-align:center;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        a.short-url{
+            font-size:18px;
+            color:#667eea;
+            text-decoration:none;
+            font-weight:bold;
+            word-break:break-all;
+        }
+
+        button{
+            margin-top:20px;
+            padding:12px 25px;
+            border:none;
+            background:#667eea;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:15px;
+        }
+
+        button:hover{
+            background:#5563d6;
+        }
+
+        .back-link{
+            display:block;
+            margin-top:20px;
+            color:#667eea;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✅ URL Generated Successfully!</h1>
+
+    <p>Your Short URL:</p>
+
+    <a class="short-url"
+       id="shortUrl"
+       th:href="${shortUrl}"
+       th:text="${shortUrl}">
+    </a>
+
+    <br>
+
+    <button onclick="copyUrl()">
+        Copy URL
+    </button>
+
+    <a href="/"
+       class="back-link">
+        Create Another URL
+    </a>
+
+</div>
+
+<script>
+
+    function copyUrl() {
+
+        const url =
+            document.getElementById("shortUrl").innerText;
+
+        navigator.clipboard.writeText(url);
+
+        alert("URL Copied Successfully!");
+
+    }
+
+</script>
+
+</body>
+</html>

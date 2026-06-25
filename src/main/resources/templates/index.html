@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #667eea,
+                            #764ba2
+                    );
+        }
+
+        .card{
+
+            background:white;
+
+            padding:40px;
+
+            border-radius:20px;
+
+            width:500px;
+
+            text-align:center;
+
+            box-shadow:
+                    0 10px 25px
+                    rgba(0,0,0,0.2);
+        }
+
+        h1{
+            margin-bottom:25px;
+        }
+
+        input{
+
+            width:90%;
+
+            padding:12px;
+
+            margin:10px;
+
+            border-radius:8px;
+
+            border:1px solid #ccc;
+
+            font-size:16px;
+        }
+
+        button{
+
+            background:#667eea;
+
+            color:white;
+
+            border:none;
+
+            padding:12px 25px;
+
+            border-radius:8px;
+
+            font-size:16px;
+
+            cursor:pointer;
+        }
+
+        button:hover{
+
+            background:#5563d6;
+        }
+
+        a{
+
+            text-decoration:none;
+
+            color:#667eea;
+
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>🔗 URL Shortener</h1>
+
+    <form action="/api/url/shorten"
+          method="post">
+
+        <input
+                type="text"
+                name="originalUrl"
+                placeholder="Enter URL"
+                required>
+
+        <input
+                type="text"
+                name="customCode"
+                placeholder="Custom Short URL (Optional)">
+
+        <button type="submit">
+
+            Shorten URL
+
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/api/url/history">
+
+        View URL History
+
+    </a>
+
+</div>
+
+</body>
+</html>

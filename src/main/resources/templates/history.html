@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>URL History</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            margin:0;
+            padding:40px;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            max-width:1200px;
+            margin:auto;
+        }
+
+        h1{
+            text-align:center;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        th{
+            background:#667eea;
+            color:white;
+            padding:12px;
+        }
+
+        td{
+            padding:12px;
+            border-bottom:1px solid #ddd;
+            text-align:center;
+        }
+
+        tr:hover{
+            background:#f5f5f5;
+        }
+
+        .home-btn{
+            display:block;
+            width:200px;
+            margin:25px auto;
+            text-align:center;
+            text-decoration:none;
+            background:#667eea;
+            color:white;
+            padding:12px;
+            border-radius:8px;
+        }
+
+        .home-btn:hover{
+            background:#5563d6;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📜 URL History</h1>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Original URL</th>
+            <th>Short Code</th>
+            <th>Clicks</th>
+        </tr>
+
+        <tr th:each="url : ${urls}">
+
+            <td th:text="${url.id}"></td>
+
+            <td th:text="${url.originalUrl}"></td>
+
+            <td th:text="${url.shortCode}"></td>
+
+            <td th:text="${url.clickCount}"></td>
+
+        </tr>
+
+    </table>
+
+    <a href="/"
+       class="home-btn">
+        Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>
